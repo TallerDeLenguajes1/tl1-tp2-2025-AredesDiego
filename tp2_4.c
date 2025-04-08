@@ -10,16 +10,37 @@ struct
     char *tipo_cpu;
 }typedef compu;
 
+void completado(compu * Computadora);
+
 int main()
 {
     srand(time(NULL));
-    compu Computadora;
+    #define compu_tam 5
+    compu *Computadora = (compu*)malloc(compu_tam * sizeof(compu));
 
-    //valores numeros aleatorios
-    Computadora.velocidad = rand() % 3 + 1;
-    Computadora.anio = rand() % 10 + 2015;
-    Computadora.cantidad_nucleos = rand() % 8 + 1;
+    completado(Computadora);
+    
+    
+
+
+
+
     
 
     return 0;
+}
+void completado(compu * Computadora)
+{
+    for (int i = 0; i < 5; i++)
+    {
+        //valores numeros aleatorios
+        Computadora[i].velocidad = rand() % 3 + 1;
+        Computadora[i].anio = rand() % 10 + 2015;
+        Computadora[i].cantidad_nucleos = rand() % 8 + 1;
+
+        //Tipos de Procesador
+        char tipo[6][10] = {"Intel", "AMD", "Celeron", "Athlon", "Core", "Pentium"};
+        Computadora[i].tipo_cpu = tipo[rand()% 6 + 1];
+    }
+    
 }
