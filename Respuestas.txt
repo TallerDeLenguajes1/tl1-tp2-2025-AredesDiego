@@ -1,0 +1,8 @@
+¿Puede ver el archivo tp2_1_2.c? ¿Por qué? 
+No puedo verlo, pues es una rama independiente.
+
+En VSCode vuelva al “Source Control” ¿Qué diferencias nota? 
+Veo visualmente la "rama" que se creo.
+
+En VSCode vuelva al “Source Control” vea los cambios, ¿Qué nota?  
+Notó que las ramas se terminaron fusionado.
