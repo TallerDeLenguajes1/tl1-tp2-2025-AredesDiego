@@ -12,6 +12,7 @@ struct
 
 void completado(compu * Computadora);
 void listarPCs(compu * Computadora);
+void mostrarMasVieja(compu * Computadora);
 
 int main()
 {
@@ -21,6 +22,7 @@ int main()
 
     completado(Computadora);
     listarPCs(Computadora);
+    mostrarMasVieja(Computadora);
 
     return 0;
 }
@@ -49,6 +51,24 @@ void listarPCs(compu * Computadora)
         printf("\nAnio: %d", Computadora[i].anio);
         printf("\ncantidad_nucleos: %d", Computadora[i].cantidad_nucleos);
         printf("\ncantidad_nucleos: %d", Computadora[i].tipo_cpu);
+    } 
+}
+
+void mostrarMasVieja(compu * Computadora)
+{
+    int menor = 3000;
+
+    if (Computadora->anio <= menor)
+    {
+        menor = Computadora->anio;
     }
     
+    for (int j = 0;Computadora->anio == menor; j++)
+    {
+        printf("\n\n---------Compu numero 1:");
+        printf("\nVelocidad: %d", Computadora[j].velocidad);
+        printf("\nAnio: %d", Computadora[j].anio);
+        printf("\ncantidad_nucleos: %d", Computadora[j].cantidad_nucleos);
+        printf("\ncantidad_nucleos: %d", Computadora[j].tipo_cpu);
+    } 
 }
