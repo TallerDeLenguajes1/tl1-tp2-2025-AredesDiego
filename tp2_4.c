@@ -11,6 +11,7 @@ struct
 }typedef compu;
 
 void completado(compu * Computadora);
+void listarPCs(compu * Computadora);
 
 int main()
 {
@@ -19,16 +20,11 @@ int main()
     compu *Computadora = (compu*)malloc(compu_tam * sizeof(compu));
 
     completado(Computadora);
-    
-    
-
-
-
-
-    
+    listarPCs(Computadora);
 
     return 0;
 }
+
 void completado(compu * Computadora)
 {
     for (int i = 0; i < 5; i++)
@@ -41,6 +37,18 @@ void completado(compu * Computadora)
         //Tipos de Procesador
         char tipo[6][10] = {"Intel", "AMD", "Celeron", "Athlon", "Core", "Pentium"};
         Computadora[i].tipo_cpu = tipo[rand()% 6 + 1];
+    }
+}
+
+void listarPCs(compu * Computadora)
+{
+    for (int i = 0; i < 5; i++)
+    {
+        printf("\n\n---------Compu numero 1:");
+        printf("\nVelocidad: %d", Computadora[i].velocidad);
+        printf("\nAnio: %d", Computadora[i].anio);
+        printf("\ncantidad_nucleos: %d", Computadora[i].cantidad_nucleos);
+        printf("\ncantidad_nucleos: %d", Computadora[i].tipo_cpu);
     }
     
 }
